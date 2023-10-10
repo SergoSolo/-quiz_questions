@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "quiz-questions"
+version = "0.1.0"
+description = "quiz questions app"
+authors = ["Serg <ser5olovjew@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "quiz_questions"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.103.2"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+alembic = "^1.12.0"
+sqlalchemy = "^2.0.21"
+fastapi-pagination = "^0.12.10"
+pydantic = "^2.4.2"
+asyncpg = "^0.28.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

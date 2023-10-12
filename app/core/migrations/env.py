@@ -13,7 +13,6 @@ from app.core.config import settings
 # access to the values within the .ini file in use.
 
 config = context.config
-print(settings.database_url)
 config.set_main_option('sqlalchemy.url', settings.database_url)
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

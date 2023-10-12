@@ -1,3 +1,6 @@
+import logging
+
+import aiohttp
 from pydantic import BaseSettings
 
 
@@ -25,3 +28,17 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+logger = logging.getLogger(__name__)
+
+
+def configure_logging():
+    logging.basicConfig(
+        datefmt="%d.%m.%Y %H:%M:%S",
+        format="%(asctime)s, %(levelname)s, %(message)s",
+        level=logging.INFO,
+    )
+
+
+async def get_http_client_session():
+    async with aiohttp.ClientSession() as session:
+        yield session

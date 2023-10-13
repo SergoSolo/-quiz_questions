@@ -6,6 +6,6 @@ main_router = APIRouter(prefix="/api")
 
 main_router.include_router(
     question_router,
-    prefix="/question",
+    prefix="/questions",
     tags=["Работа с вопросами к викторине."]
 )

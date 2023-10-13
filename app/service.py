@@ -14,7 +14,7 @@ async def get_unique_questions(
         session: AsyncSession,
         http_client: aiohttp.ClientSession
 ):
-    """Функция получние уникальных вопросов от запроса к API."""
+    """Функция получние уникальных вопросов от API."""
     unique_questions = []
     url = (
             "https://jservice.io/api/random?count="
@@ -25,11 +25,11 @@ async def get_unique_questions(
         if questions.status == HTTPStatus.OK:
             questions = await questions.json()
             for question in questions:
-                question = await question_service.get_object_by_question_id(
+                db_object = await question_service.get_object_by_question_id(
                     question["id"],
                     session
                 )
-                if question is not None:
+                if db_object is not None:
                     logger.info(
                         (
                             "Производим повторный запрос для ",

@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
 
 class QuestionSchemaDB(BaseModel):
-
     question_id: int
     question: str
     answer: str
@@ -12,10 +11,3 @@ class QuestionSchemaDB(BaseModel):
 
     class Config:
         orm_mode = True
-
-
-class CreateQuestionSchema(BaseModel):
-    question_id: int
-    question: str
-    answer: str
-    created_at: datetime

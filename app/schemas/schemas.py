@@ -4,7 +4,7 @@ from pydantic import BaseModel, Extra, Field
 
 
 class QuestionSchema(BaseModel):
-    number: int = Field(None, ge=0, le=100)
+    questions_num: int = Field(None, ge=0, le=100)
 
     class Config:
         extra = Extra.forbid

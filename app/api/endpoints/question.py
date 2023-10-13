@@ -19,7 +19,7 @@ router = APIRouter()
         response_model=list | QuestionSchemaDB,
 )
 async def request_for_questions(
-    questions_num: QuestionSchema,
+    request_questions: QuestionSchema,
     session: AsyncSession = Depends(get_async_session),
     http_client: aiohttp.ClientSession = Depends(get_http_client_session)
 ):
@@ -29,7 +29,7 @@ async def request_for_questions(
     - **questions_num**: необходимое количество вопросов(за раз максимум 100).
     """
     questions = await get_unique_questions(
-        questions_num.number,
+        request_questions.questions_num,
         session,
         http_client
     )

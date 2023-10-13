@@ -85,7 +85,7 @@ docker-compose down
 </details>
 
 <details>
-<summary>Примеры запросов.</summary>
+<summary>Примеры запросов</summary>
 <br>
 
 POST запрос к публичнму API.
